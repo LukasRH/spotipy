@@ -87,6 +87,9 @@ def prompt_for_user_token(username, scope=None, client_id = None,
         code = sp_oauth.parse_response_code(response)
         token_info = sp_oauth.get_access_token(code)
     # Auth'ed API request
+
+    print("Acquired credentials")
+
     if token_info:
         return token_info['access_token']
     else:
